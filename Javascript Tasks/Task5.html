@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task5</title>
+    <style>
+        form {
+            margin-top: 10%;
+        }
+        form label {
+            display: inline-block;
+            text-align: right;
+            font-size: 20px;
+        }
+        input, label{
+            margin: 10px;
+        }
+        textarea{
+            vertical-align: top;
+        }
+
+        .error-message { 
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <form align="center" action="">
+        <label for="">Name:</label>
+        <input id="name" type="text"> 
+        <span class="error-message">This Field is required</span><br>
+
+        <label for="">Email:</label>
+        <input id="email" type="text"> 
+        <span class="error-message">A valid email address is required</span><br>
+
+        <label for="">Website:</label>
+        <input id="website" type="text"> 
+        <span class="error-message">A valid url is required</span><br>
+
+        <label for="">Message:</label>
+        <textarea name="" id="message"></textarea> 
+        <span class="error-message">This Field is required</span><br>
+
+        <button onclick="check()">Submit</button>
+    </form>
+
+    <script>
+        function check() {
+            const name = document.getElementById("name");
+            const email = document.getElementById("email");
+            const website = document.getElementById("website");
+            const message = document.getElementById("message");
+
+            if (name.value.length === 0) {
+                name.nextElementSibling.style.display = "inline-block"; 
+                event.preventDefault()
+            } 
+
+            if (email.value.length === 0) {
+                email.nextElementSibling.style.display = "inline-block"; 
+                event.preventDefault()
+            } 
+
+            if (website.value.length === 0) {
+                website.nextElementSibling.style.display = "inline-block"; 
+                event.preventDefault()
+            } 
+
+            if (message.value.length === 0) {
+                message.nextElementSibling.style.display = "inline-block"; 
+                event.preventDefault()
+            } 
+
+        }
+
+    </script>
+</body>
+</html>

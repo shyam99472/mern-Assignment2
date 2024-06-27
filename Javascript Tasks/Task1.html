@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task1</title>
+</head>
+<body>
+   
+    <input type="number" id="num" placeholder="Enter a number">
+    <button onclick="reverse()">Reverse</button>
+    <p id="result"></p>
+    
+
+    <script>
+        function reverse() {
+            var number = parseInt(document.getElementById('num').value);
+            var reversed = 0;
+
+            while (number > 0) {
+                let digit = number%10;
+                reversed = reversed*10 + digit;
+                number = Math.floor(number / 10);
+            }
+
+            document.getElementById('result').innerText = "Reversed Number: " + reversed;
+        }
+    </script>
+    
+</body>
+</html>
